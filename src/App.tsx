@@ -12,13 +12,12 @@ import Footer from "./components/layout/Footer";
 function App() {
   return (
     <Router>
-      <GlobalStyles>
-        <Header />
-        <Main>
-          <AllRoutes />
-        </Main>
-        <Footer />
-      </GlobalStyles>
+      <GlobalStyles />
+      <Header />
+      <Main>
+        <AllRoutes />
+      </Main>
+      <Footer />
     </Router>
   );
 }
