@@ -23,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-      background: radial-gradient(0%, #FF00C7, 100%, #7000FF)
+      background: radial-gradient(${colors.primary}, ${colors.secundary});
     }
 
     a,

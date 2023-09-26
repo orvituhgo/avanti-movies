@@ -3,11 +3,13 @@ import { useEffect, useState } from "react";
 import Loader from "../../components/Loader";
 import getGenres from "../../services/getGenres";
 import { Genres } from "../../@types/Genres";
+import getMovies from "../../services/getMovies";
 
 export default function Homepage() {
   const [genres, setGenres] = useState<Genres>();
   const [loading, setLoading] = useState(true);
   const [activeGenre, setActiveGenre] = useState("");
+  const [movies, setMovies]  = useState<Movies>();
 
   async function fetchGenres() {
     try {
@@ -19,9 +21,23 @@ export default function Homepage() {
     }
   }
 
+  async function fetchMovies(){
+    try {
+      const { data } = await getMovies();
+        console.log(data)
+        setMovies(data.results);
+        setLoading(false);
+    } catch (error) {
+      console.log(error);
+    }
+    
+  }
+
   useEffect(() => {
     if (!genres?.length) fetchGenres();
-  }, [genres]);
+    if (!movies?.length) fetchMovies();
+  }, [genres, movies]);
+
 
   return (
     <div>
