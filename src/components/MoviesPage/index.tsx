@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { Container } from "./styles";
+import { Container, Card } from "./styles";
 import { Movies } from "../../@types/Movies";
 
 import getMovies from "../../services/getMovies";
@@ -30,7 +30,13 @@ export default function MoviesPage() {
       {loading ? (
         <Loader />
       ) : movies?.length ? (
-        movies.map((movie) => <p key={movie.id}>{movie.id}</p>)
+        movies.map((movie) => (
+          <Card key={movie.id}>
+            <div>
+              <img src={movie.poster_path} alt="" />
+            </div>
+          </Card>
+        ))
       ) : (
         <h1>Nada encontrado</h1>
       )}

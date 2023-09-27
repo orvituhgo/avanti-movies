@@ -1,7 +1,7 @@
 export interface Movie {
-    id: number;
-    name: string;
-  }
-  
-  export type Movies = Movie[];
-  
+  id: number;
+  poster_path: string;
+  title: string;
+}
+
+export type Movies = Movie[];
