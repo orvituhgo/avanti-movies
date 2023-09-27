@@ -46,15 +46,12 @@ export default function Details() {
       <MoviePageDiv>
         <MovieTitle>{movie?.original_title}</MovieTitle>
         <MoviePageDivImg>
-          // TODO: Colocar URL no .env
-          // TODO: Centralizar image
           <MoviePageImg src={`https://image.tmdb.org/t/p/w500/${movie?.poster_path}`} /> 
         </MoviePageDivImg>
         <MovieSinopse>
           Sinopse
           <MovieSinopseText>{movie?.overview}</MovieSinopseText>
         </MovieSinopse>
-        // TODO: Adicionar mais informações do file - Nova div 
       </MoviePageDiv>
       </>
       )}
