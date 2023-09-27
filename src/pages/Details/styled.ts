@@ -58,7 +58,3 @@ export const MovieGenres = styled.div`
   font-weight: 400;
   font-family: 'Roboto', sans-serif;
 `;
-
-
-
-

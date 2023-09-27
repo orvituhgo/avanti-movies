@@ -6,8 +6,7 @@ const BASE_URL = import.meta.env.VITE_BASE_URL;
 export default axios.create({
   baseURL: BASE_URL,
   headers: {
-    "Content-Type": "application/json",
-    // Authorization: `Bearer 6aef3d4645903277e4db85f88cde9da3`,
+    accept: "application/json",
+    Authorization: `Bearer ${API_KEY}`,
   },
-  timeout: 1000,
 });

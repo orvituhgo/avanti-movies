@@ -13,5 +13,5 @@ const fade = keyframes`
 `;
 
 export const Fading = styled.div`
-  animation: ${fade} 1s infinite;
+  animation: ${fade} 1s infinite both1;
 `;
