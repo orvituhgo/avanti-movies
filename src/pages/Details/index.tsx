@@ -1,23 +1,30 @@
+import { MoviePageDiv,MoviePageDivImg,MoviePageImg,MovieTitle,MovieSinopse,MovieSinopseText } from "./styled.ts";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import {
+  BsGraphUp,
+  BsWallet2,
+  BsHourglassSplit,
+  BsFillFileEarmarkTextFill
+} from "react-icons/bs"
 
 import getMovie from "../../services/getMovie";
-const API_KEY = import.meta.env.VITE_API_KEY;
-const BASE_URL = import.meta.env.VITE_BASE_URL;
-const IMG = import.meta.env.VITE_IMG
+import { Movie } from "../../@types/Movie";
+const API_KEY = "6aef3d4645903277e4db85f88cde9da3" //import.meta.env.VITE_API_KEY;
 
 export default function Details() {
-  const[movie, setMovie] = useState();
-  const [loading, setLoading] = useState(true);
-  const genres = []
-  const { id } = useParams();
+  const {id} = useParams();
+  const[movie, setMovie] = useState<Movie>();
+  //const [loading, setLoading] = useState(true);
 
-  async function fetchMovie(url:string) {
+  async function fetchMovie(movie_id: string) {
     try {
-      const { data } = await getMovie(url);
-      setMovie(data);
-
-      setLoading(false);
+      //linha para teste: 17
+      const local_id = parseInt(movie_id);
+      const { data } = await getMovie(`/3/movie/${local_id}?api_key=${API_KEY}`);
+      const { id, adult, genres, original_title, overview, poster_path, tagline, runtime } = data;
+      setMovie({id, adult, genres, original_title, overview, poster_path, tagline, runtime});
+      //setLoading(false);
     } catch(e){
       console.log(e);
     }
@@ -31,41 +38,32 @@ export default function Details() {
     return concat
   }
 
+  console.log(id);
   useEffect(() => {
-    const movieURL = `${BASE_URL}/3/movie/${id}?api_key=${API_KEY}`;
-    fetchMovie(movieURL);
-
-  }, []);
+    if (typeof id === 'string') {
+      if (!movie) fetchMovie(id);
+    } else {
+      // Trate o caso em que 'id' é 'undefined' (não encontrado na URL)
+      console.error('ID não encontrado na URL');
+    }
+  }, [movie]);
 
   return (
     <div>
-      <div>
-      <img src={IMG+movie?.poster_path}/>
-
-      </div>
-
-      <div> 
-        <h1>{movie && <>{movie.title}</>}</h1>
-      </div>
-
-      <div> 
-        <h2>{movie && <>Nota: {movie.vote_average}</>}</h2>
-        <h2>{movie && <>N° votos: {movie.vote_count}</>}</h2>
-      </div>
-
-      <div>
-        <h2>Sinopse</h2> 
-        {movie && <h4>{movie.overview}</h4>}
-        {movie && <h4>{console.log(movie)}</h4>}
-      </div>
-      
-      <div>
-        <h2>Gêneros: {movie && <>{concatGenres(movie.genres)}</>}</h2> 
-      </div>
-
-
-
-
+      {movie && ( 
+      <>
+      <MoviePageDiv>
+        <MovieTitle>{movie?.original_title}</MovieTitle>
+        <MoviePageDivImg>
+          <MoviePageImg src={`https://image.tmdb.org/t/p/w500/${movie?.poster_path}`} /> 
+        </MoviePageDivImg>
+        <MovieSinopse>
+          Sinopse
+          <MovieSinopseText>{movie?.overview}</MovieSinopseText>
+        </MovieSinopse>
+      </MoviePageDiv>
+      </>
+      )}
     </div>
     
   );

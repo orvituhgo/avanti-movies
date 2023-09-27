@@ -6,5 +6,7 @@ export type Movie ={
     genres: Genres;
     original_title: string;
     overview: string;
-
+    poster_path: string;
+    tagline: string;
+    runtime: number;
   }
