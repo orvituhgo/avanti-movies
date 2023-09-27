@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 
-import Loader from "../../components/Loader";
 import getGenres from "../../services/getGenres";
 import { Genres } from "../../@types/Genres";
-import getMovies from "../../services/getMovies";
+
+import Loader from "../../components/Loader";
+import MoviesPage from "../../components/MoviesPage";
 
 export default function Homepage() {
   const [genres, setGenres] = useState<Genres>();
   const [loading, setLoading] = useState(true);
   const [activeGenre, setActiveGenre] = useState("");
-  const [movies, setMovies]  = useState<Movies>();
 
   async function fetchGenres() {
     try {
@@ -21,23 +21,9 @@ export default function Homepage() {
     }
   }
 
-  async function fetchMovies(){
-    try {
-      const { data } = await getMovies();
-        console.log(data)
-        setMovies(data.results);
-        setLoading(false);
-    } catch (error) {
-      console.log(error);
-    }
-    
-  }
-
   useEffect(() => {
     if (!genres?.length) fetchGenres();
-    if (!movies?.length) fetchMovies();
-  }, [genres, movies]);
-
+  }, [genres]);
 
   return (
     <div>
@@ -58,6 +44,7 @@ export default function Homepage() {
           )}
         </select>
       )}
+      <MoviesPage />
     </div>
   );
 }
