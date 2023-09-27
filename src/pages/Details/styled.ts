@@ -24,7 +24,7 @@ export const MoviePageImg = styled.img`
   background-color: blue;
   display:inline-block;
   vertical-align:middle;
-  border-radius: 50%;
+  border-radius: 20%;
   width: 15%;
   height: 10%;
 `;
@@ -48,6 +48,17 @@ export const MovieSinopseText = styled.div`
   font-weight: 400;
   font-family: 'Roboto', sans-serif;
 `;
+
+export const MovieGenres = styled.div`
+  text-align: left;
+  width: 80%;
+  margin-left: 20%;
+  padding-top: 2%;
+  font-size: 20px;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+`;
+
 
 
 
