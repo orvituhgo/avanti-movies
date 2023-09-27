@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 
 import getGenres from "../../services/getGenres";
+import { ContainerFlex } from "./styled";
 import { Genres } from "../../@types/Genres";
 
 import Loader from "../../components/Loader";
-import MoviesPage from "../../components/MoviesPage";
+import CarrosselMovies from "../../components/CarrosselMovies";
 
 export default function Homepage() {
   const [genres, setGenres] = useState<Genres>();
@@ -26,10 +27,10 @@ export default function Homepage() {
   }, [genres]);
 
   return (
-    <div>
+    <ContainerFlex>
       <h1>Homepage</h1>
       {loading ? (
-        <Loader />
+        <Loader size={80} />
       ) : (
         <select onChange={(e) => setActiveGenre(e.target.value)}>
           <option>Selecionar</option>
@@ -44,7 +45,7 @@ export default function Homepage() {
           )}
         </select>
       )}
-      <MoviesPage />
-    </div>
+      <CarrosselMovies activeGenre={activeGenre} />
+    </ContainerFlex>
   );
 }

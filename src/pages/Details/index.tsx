@@ -8,12 +8,12 @@ import {
 } from "./styled.ts";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import {
-  BsGraphUp,
-  BsWallet2,
-  BsHourglassSplit,
-  BsFillFileEarmarkTextFill,
-} from "react-icons/bs";
+// import {
+//   BsGraphUp,
+//   BsWallet2,
+//   BsHourglassSplit,
+//   BsFillFileEarmarkTextFill,
+// } from "react-icons/bs";
 
 import getMovie from "../../services/getMovie";
 import { Movie } from "../../@types/Movie";

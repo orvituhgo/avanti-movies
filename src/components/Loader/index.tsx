@@ -1,10 +1,14 @@
 import { TbMovieOff } from "react-icons/tb";
 import { Fading } from "./styles";
 
-export default function Loader() {
+type Props = {
+  size: number;
+};
+
+export default function Loader({ size }: Props) {
   return (
     <Fading>
-      <TbMovieOff size={150} />
+      <TbMovieOff size={size} />
     </Fading>
   );
 }
