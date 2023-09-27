@@ -1,9 +1,12 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
+import { Link } from "react-router-dom";
+
 import { colors } from "../configs/colors";
 
 const GlobalStyle = createGlobalStyle`
 
     *,
+    #root,
     *:before,
     *:after {
       margin: 0;
@@ -20,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-      background: radial-gradient(0%, #FF00C7, 100%, #7000FF)
+      background: radial-gradient(${colors.primary}, ${colors.secundary});
     }
 
     a,
@@ -30,6 +33,13 @@ const GlobalStyle = createGlobalStyle`
       color: inherit;
       cursor: pointer;
     }
+`;
+
+export const LinkStyled = styled(Link)`
+  background-color: ${colors.primary};
+  height: 40px;
+  border-radius: 4px;
+  min-width: 100px;
 `;
 
 export default GlobalStyle;

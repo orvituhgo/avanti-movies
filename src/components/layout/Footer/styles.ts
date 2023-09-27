@@ -1,17 +1,21 @@
 import styled from "styled-components";
+import { colors } from "../../../configs/colors";
 
 export const Wrapper = styled.footer`
-  height: 8rem;
+  height: 4rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(90deg, #e8edf5 0, #fff 100%);
 `;
 
-export const Credits = styled.h1`
+export const Credits = styled.h3`
   text-align: center;
-  color: #444;
+  color: ${colors.text};
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
 
   & a {
     color: #1c50a1 !important;
