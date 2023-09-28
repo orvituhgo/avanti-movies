@@ -9,5 +9,4 @@ export const postFavorites = async (value: Favorites) => {
   if (!value) return;
   const valueToStorage = JSON.stringify(value);
   await localStorage.setItem("favorite", valueToStorage);
-  console.log("postFavorites");
 };

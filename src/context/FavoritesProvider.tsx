@@ -28,7 +28,6 @@ export default function FavoritesContextProvider({ children }: Props) {
     postFavorites(newFavorites);
     setFavorites(newFavorites);
     alert("Adicionado aos favoritos");
-    console.log(newFavorites, favorite);
   };
 
   const value = {

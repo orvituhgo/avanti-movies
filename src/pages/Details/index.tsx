@@ -70,7 +70,6 @@ export default function Details() {
     return concat;
   };
 
-  console.log(id);
   useEffect(() => {
     if (typeof id === "string") {
       if (!movie) fetchMovie(id);

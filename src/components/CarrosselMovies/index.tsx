@@ -32,13 +32,10 @@ export default function CarrosselMovies({ activeGenre }: Props) {
   }
 
   useEffect(() => {
-    console.log(activeGenre);
-
     async function fetchMoviesByGenre() {
       try {
         setLoading(true);
         const { data } = await getMovieByGenre(activeGenre);
-        console.log(data);
         setMovies(data.results);
         setLoading(false);
       } catch (error) {
