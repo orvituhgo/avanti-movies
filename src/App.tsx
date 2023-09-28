@@ -9,16 +9,20 @@ import Main from "./components/Main/Main";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 
+import FavoritesContextProvider from "./context/FavoritesProvider";
+
 function App() {
   return (
-    <Router>
-      <GlobalStyles />
-      <Header />
-      <Main>
-        <AllRoutes />
-      </Main>
-      <Footer />
-    </Router>
+    <FavoritesContextProvider>
+      <Router>
+        <GlobalStyles />
+        <Header />
+        <Main>
+          <AllRoutes />
+        </Main>
+        <Footer />
+      </Router>
+    </FavoritesContextProvider>
   );
 }
 

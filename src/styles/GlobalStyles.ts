@@ -36,7 +36,8 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export const LinkStyled = styled(Link)`
-  background-color: ${colors.primary};
+  background-color: white;
+  color: ${colors.primary};
   height: 40px;
   border-radius: 4px;
   min-width: 100px;

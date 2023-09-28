@@ -3,7 +3,7 @@ import { colors } from "../../configs/colors";
 
 export const MoviePageDiv = styled.div`
   color: ${colors.text};
-  font-family: 'Raleway';
+  font-family: "Raleway";
   max-width: 100%;
   max-height: 100%;
   margin: 2rem auto;
@@ -22,10 +22,10 @@ export const MoviePageDivImg = styled.div`
 export const MoviePageImg = styled.img`
   overflow: hidden;
   background-color: blue;
-  display:inline-block;
-  vertical-align:middle;
+  display: inline-block;
+  vertical-align: middle;
   border-radius: 20%;
-  width: 15%;
+  width: 300px;
   height: 10%;
 `;
 
@@ -38,7 +38,7 @@ export const MovieSinopse = styled.div`
   margin-left: 20%;
   font-size: 32px;
   font-weight: 500;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 `;
 
 export const MovieSinopseText = styled.div`
@@ -46,7 +46,7 @@ export const MovieSinopseText = styled.div`
   width: 80%;
   font-size: 20px;
   font-weight: 400;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 `;
 
 export const MovieGenres = styled.div`
@@ -56,5 +56,5 @@ export const MovieGenres = styled.div`
   padding-top: 2%;
   font-size: 20px;
   font-weight: 400;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 `;

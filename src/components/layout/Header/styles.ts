@@ -45,8 +45,11 @@ export const Title = styled.h1`
 `;
 
 export const Button = styled.button`
-  background-color: ${colors.primary};
-  height: 40px;
+  background-color: white;
+  color: ${colors.primary};
+  height: 80px;
   border-radius: 4px;
   min-width: 100px;
+  font-size: 18px;
+  font-weight: bold;
 `;

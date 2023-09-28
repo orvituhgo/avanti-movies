@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../configs/colors";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   height: 80%;
@@ -12,7 +13,7 @@ export const Container = styled.div`
   gap: 10px;
 `;
 
-export const Card = styled.a`
+export const Card = styled(Link)`
   min-width: 250px;
   height: 450px;
   background-color: ${colors.grayBlur};
