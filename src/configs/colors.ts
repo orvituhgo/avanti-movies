@@ -3,5 +3,5 @@ export const colors = {
   secundary: "#12011F",
   gray: "#666",
   grayBlur: "#9994",
-  text: "#D6D6D6",
+  text: "#FFF",
 };

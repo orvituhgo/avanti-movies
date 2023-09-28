@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { FavoritesContext } from "../../context/FavoritesProvider";
 
-import { Favorite, Favorites } from "../../@types/Favorites";
+import { Favorite } from "../../@types/Favorites";
 
 import { FavItem, SectionTitle } from "./styles";
 
@@ -17,7 +17,10 @@ export default function FavoriteList() {
             <FavItem>{favorite.title}</FavItem>
           ))
         ) : (
-          <FavItem>Nenhuma item adicionado aos favoritos</FavItem>
+          <FavItem>
+            Nenhuma item adicionado aos favoritos. Click em + aos lado do filme
+            desejado
+          </FavItem>
         )}
       </ul>
     </div>
