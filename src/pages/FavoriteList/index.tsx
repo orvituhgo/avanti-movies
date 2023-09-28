@@ -10,11 +10,11 @@ export default function FavoriteList() {
 
   return (
     <div>
-      <SectionTitle>Favorites</SectionTitle>
+      <SectionTitle>Favoritos</SectionTitle>
       <ul>
         {favorites?.length ? (
           favorites.map((favorite: Favorite) => (
-            <FavItem>{favorite.title}</FavItem>
+            <FavItem key={favorite.id}>{favorite.title}</FavItem>
           ))
         ) : (
           <FavItem>

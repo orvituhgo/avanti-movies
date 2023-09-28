@@ -28,7 +28,7 @@ export default function Homepage() {
 
   return (
     <ContainerFlex>
-      <h1>Homepage</h1>
+      <h1>Catálogo</h1>
       {loading ? (
         <Loader size={80} />
       ) : (

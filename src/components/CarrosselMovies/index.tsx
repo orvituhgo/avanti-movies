@@ -25,6 +25,8 @@ export default function CarrosselMovies({ activeGenre }: Props) {
     try {
       const { data } = await getMovies();
       setMovies(data.results);
+      console.log(data.results);
+
       setLoading(false);
     } catch (error) {
       console.log(error);
@@ -63,7 +65,7 @@ export default function CarrosselMovies({ activeGenre }: Props) {
               />
               <div>
                 <h2>{movie.original_title}</h2>
-                <p>{movie.original_title}</p>
+                <p>{movie.release_date}</p>
               </div>
             </Card>
             <PlusBtn

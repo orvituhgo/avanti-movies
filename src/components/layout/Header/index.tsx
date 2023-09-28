@@ -14,11 +14,11 @@ export default function Header() {
           <Logo>
             <MdMovie size={80} color={"#FFF"} />
           </Logo>
-          <Title>CLUBINHO DOS FILMINHO</Title>
+          <Title>CLUBINHO DOS FILMINHOS</Title>
         </Content>
         <LinkStyled to={pathname === "/" ? "/favorites" : "/"}>
           <Button type="button">
-            {pathname === "/" ? "MINHA LISTA" : "CATÁLOGO"}
+            {pathname === "/" ? "FAVORITOS" : "CATÁLOGO"}
           </Button>
         </LinkStyled>
       </Container>

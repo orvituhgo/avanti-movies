@@ -24,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
 
     body {
       background: radial-gradient(${colors.primary}, ${colors.secundary});
+      color: ${colors.text};
     }
 
     a,

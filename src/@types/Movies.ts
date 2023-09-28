@@ -9,6 +9,7 @@ export interface Movie {
   poster_path: string;
   tagline: string;
   runtime: number;
+  release_date: string;
 }
 
 export type Movies = Movie[];
